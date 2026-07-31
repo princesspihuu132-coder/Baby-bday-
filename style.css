@@ -1,0 +1,982 @@
+body{
+margin:0;
+padding:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ecf,#ffe4f2,#fff);
+position: relative;
+min-height: 100vh;
+height:100vh;
+overflow:hidden;
+}
+
+/* Welcome Page */
+.container{
+text-align:center;
+animation:fade 1.5s;
+}
+
+h1{
+color:#ff1493;
+font-size:40px;
+}
+
+p{
+font-size:20px;
+color:#555;
+}
+
+button{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:#ff4da6;
+color:white;
+font-size:20px;
+cursor:pointer;
+box-shadow:0 0 8px pink;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.hidden{
+display:none;
+}
+
+/* Letter Page */
+#letterPage{
+display:none;
+width:90%;
+max-width:700px;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 25px pink;
+overflow-y:auto;
+max-height:85vh;
+animation:fade 1s;
+}
+
+#letter{
+white-space:pre-wrap;
+font-size:18px;
+line-height:1.8;
+color:#444;
+}
+
+/* Gallery */
+#gallery{
+display:none;
+text-align:center;
+animation:fade 1s;
+}
+
+#slide{
+width:280px;
+height:420px;
+object-fit:contain;
+border-radius:20px;
+box-shadow:0 0 25px rgba(255,20,147,.5);
+display:block;
+margin:20px auto;
+animation:photoAnimation 5s ease-in-out;
+}
+
+#caption{
+font-size:20px;
+font-weight:bold;
+color:#ff1493;
+}
+
+/* Final Page */
+#finalPage{
+display:none;
+text-align:center;
+padding:20px;
+animation:fade 2s;
+}
+
+#finalPage h1{
+font-size:50px;
+color:#ff0066;
+animation:heartbeat 1.2s infinite;
+}
+
+#finalPage h2{
+color:#ff1493;
+}
+
+#restartBtn{
+margin-top:20px;
+}
+
+/* Floating Hearts */
+#hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:-1;
+}
+
+.heart{
+position:absolute;
+bottom:-30px;
+animation:floatUp linear forwards;
+}
+
+/* Animations */
+
+@keyframes fade{
+from{
+opacity:0;
+}
+to{
+opacity:1;
+}
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0) scale(.5);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.4);
+opacity:0;
+}
+}
+
+@keyframes heartbeat{
+0%{transform:scale(1);}
+25%{transform:scale(1.08);}
+50%{transform:scale(1);}
+75%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+@keyframes photoAnimation{
+
+0%{
+opacity:0;
+transform:scale(0.9) translateX(-20px);
+}
+
+20%{
+opacity:1;
+transform:scale(1) translateX(0);
+}
+
+50%{
+opacity:1;
+transform:scale(1.05) translateX(8px);
+}
+
+80%{
+opacity:1;
+transform:scale(1.1) translateX(15px);
+}
+
+100%{
+opacity:0;
+transform:scale(1.15) translateX(25px);
+}
+
+}
+#flash{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+opacity:0;
+pointer-events:none;
+z-index:9999;
+transition:opacity .25s;
+}
+#giftPage{
+display:none;
+width:90%;
+max-width:700px;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 25px pink;
+text-align:center;
+animation:fade 1s;
+}
+
+#giftBtn,
+#promiseBtn{
+
+padding:18px 35px;
+font-size:22px;
+border:none;
+border-radius:50px;
+background:#ff4da6;
+color:white;
+cursor:pointer;
+box-shadow:0 0 25px pink;
+
+}
+
+#promiseBox{
+
+margin-top:30px;
+
+}
+
+#promiseBox p{
+
+font-size:20px;
+line-height:1.8;
+
+}#restartPage{
+display:none;
+text-align:center;
+animation:fade 2s;
+}
+
+#restartPage h1{
+color:#ff1493;
+font-size:48px;
+}
+
+#restartPage p{
+font-size:22px;
+}
+#endingScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:99999;
+color:white;
+text-align:center;
+}
+
+#endingText{
+font-size:50px;
+color:#ff4da6;
+font-weight:bold;
+animation:heartbeat 1.5s infinite;
+}
+/* Galaxy Page */
+
+#galaxyPage{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+display:none;
+
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+background:
+radial-gradient(circle at center,#111 0%,#050510 50%,black 100%);
+
+z-index:999999;
+
+animation:zoomGalaxy 18s ease-in-out forwards;
+will-change: transform;
+transform:translateZ(0);
+
+}
+
+@keyframes zoomGalaxy{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1.15);
+}
+
+}
+
+#starContainer{
+position:fi;
+width:100%;
+height:100%;
+background:
+radial-gradient(2px 2px at 20% 30%,white,transparent),
+radial-gradient(1px 1px at 80% 20%,white,transparent),
+radial-gradient(2px 2px at 60% 70%,white,transparent),
+radial-gradient(1px 1px at 35% 80%,white,transparent),
+radial-gradient(2px 2px at 90% 60%,white,transparent),
+radial-gradient(1px 1px at 10% 90%,white,transparent);
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+
+from{
+
+opacity:.4;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+.nebula{
+
+position:absolute;
+
+width:700px;
+height:700px;
+
+left:-150px;
+top:-120px;
+
+background:radial-gradient(circle,
+rgba(255,0,255,.18),
+transparent 70%);
+
+filter:blur(25px);
+
+animation:nebulaMove 15s infinite alternate;
+will-change:transform;
+}
+.nebula1{
+    left:-150px;
+    top:-120px;
+}
+
+.nebula2{
+    right:-150px;
+    bottom:-120px;
+    left:auto;
+    top:auto;
+    background:radial-gradient(circle,
+        rgba(0,200,255,.18),
+        transparent 70%);
+}
+
+@keyframes nebulaMove{
+
+from{
+
+transform:translate(-20px,-20px);
+
+}
+
+to{
+
+transform:translate(40px,40px);
+
+}
+
+}
+
+.milkyWay{
+
+position:absolute;
+
+width:180%;
+height:220px;
+
+top:35%;
+
+left:-30%;
+
+background:linear-gradient(90deg,
+transparent,
+rgba(255,255,255,.18),
+transparent);
+
+transform:rotate(-25deg);
+
+filter:blur(30px);
+
+}
+
+.shooting{
+
+position:absolute;
+
+width:180px;
+
+height:2px;
+
+background:white;
+
+box-shadow:0 0 8px white;
+
+animation:meteor 8s linear infinite;
+will-change: transform;
+
+}
+
+.shooting1{
+
+top:15%;
+left:-20%;
+
+animation-delay:0s;
+
+}
+
+.shooting2{
+
+top:45%;
+left:-40%;
+
+animation-delay:2s;
+
+}
+
+.shooting3{
+
+top:70%;
+left:-30%;
+
+animation-delay:4s;
+
+}
+.shooting4{
+top:30%;
+left:-10%;
+animation-delay:6s;
+}
+
+.shooting5{
+top:55%;
+left:-50%;
+animation-delay:8s;
+}
+
+.shooting6{
+top:80%;
+left:-30%;
+animation-delay:10s;
+}
+
+@keyframes meteor{
+
+0%{
+
+transform:translate(0,0) rotate(25deg);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translate(1600px,700px) rotate(25deg);
+
+opacity:0;
+
+}
+
+}
+
+.planet{
+
+position:absolute;
+
+border-radius:50%;
+
+animation:planetFloat 14s ease-in-out infinite;
+
+}
+
+@keyframes planetFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+}
+
+.sun{
+
+width:90px;
+height:90px;
+
+background:#ffcc33;
+
+left:5%;
+top:8%;
+
+box-shadow:0 0 30px gold;
+
+}
+.mercury{
+width:12px;
+height:12px;
+background:#bdbdbd;
+left:20%;
+top:25%;
+}
+
+.venus{
+width:22px;
+height:22px;
+background:#d8b46a;
+left:25%;
+top:40%;
+}
+
+.uranus{
+width:38px;
+height:38px;
+background:#8de0ff;
+left:82%;
+top:32%;
+}
+
+.earth{
+
+width:35px;
+height:35px;
+
+background:#2196f3;
+
+left:30%;
+top:62%;
+
+}
+
+.moon{
+
+width:10px;
+height:10px;
+
+background:#ddd;
+
+left:34%;
+top:65%;
+
+}
+
+.mars{
+
+width:22px;
+height:22px;
+
+background:#ff7043;
+
+left:70%;
+top:20%;
+
+}
+
+.jupiter{
+
+width:65px;
+height:65px;
+
+background:#d4a373;
+
+left:72%;
+top:55%;
+
+}
+
+.saturn{
+
+width:58px;
+height:58px;
+
+background:#e7c97a;
+
+left:48%;
+top:18%;
+
+}
+
+.saturn::after{
+
+content:"";
+
+position:absolute;
+
+width:80px;
+height:10px;
+
+left:-10px;
+top:24px;
+
+border:2px solid white;
+
+border-radius:50%;
+
+}
+
+.neptune{
+
+width:30px;
+height:30px;
+
+background:#4fc3f7;
+
+left:88%;
+top:75%;
+
+}
+
+#galaxyText{
+
+position:absolute;
+
+bottom:8%;
+
+width:100%;
+
+text-align:center;
+
+color:white;
+
+font-size:38px;
+
+font-weight:bold;
+
+opacity:0;
+
+text-shadow:0 0 25px white;
+
+animation:textAppear 10s forwards;
+will-change:transform;
+
+}
+
+@keyframes textAppear{
+
+0%,75%{
+
+opacity:0;
+
+}
+
+100%{
+
+opacity:1;
+
+}
+
+}
+/* Milky Way Rotation */
+.milkyWay{
+animation:milkyRotate 80s linear infinite;
+transform-origin:center;
+}
+
+@keyframes milkyRotate{
+0%{transform:rotate(-25deg);}
+100%{transform:rotate(335deg);}
+}
+
+/* Earth Rotation */
+.earth{
+animation:
+planetFloat 8s ease-in-out infinite,
+earthRotate 6s linear infinite;
+}
+
+@keyframes earthRotate{
+from{
+transform:rotate(0deg);
+}
+to{
+transform:rotate(360deg);
+}
+}
+
+/* Jupiter Rotation */
+.jupiter{
+animation:
+planetFloat 10s ease-in-out infinite,
+spinPlanet 12s linear infinite;
+}
+
+/* Saturn Rotation */
+.saturn{
+animation:
+planetFloat 12s ease-in-out infinite,
+spinPlanet 15s linear infinite;
+}
+
+@keyframes spinPlanet{
+from{
+transform:rotate(0deg);
+}
+to{
+transform:rotate(360deg);
+}
+}
+
+/* Nebula Glow */
+.nebula{
+  animation:
+nebulaMove 35s ease-in-out infinite alternate,
+nebulaGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaGlow{
+from{
+opacity:.5;
+filter:blur(25px);
+}
+to{
+opacity:1;
+filter:blur(40px);
+}
+}
+
+/* Galaxy Text Glow */
+#galaxyText{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+width:90%;
+text-align:center;
+color:white;
+font-size:38px;
+font-weight:bold;
+opacity:0;
+text-shadow:0 0 25px white;
+animation:textAppear 10s forwards;
+}
+
+@keyframes textGlow{
+from{
+text-shadow:0 0 20px white;
+}
+to{
+text-shadow:
+0 0 30px white,
+0 0 60px pink,
+0 0 90px cyan;
+}
+}
+/* Wish Page */
+
+#wishPage{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(#020111,#191970,#000);
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+z-index:999999;
+}
+
+#wishPage h1{
+color:white;
+}
+
+#wishPage p{
+color:white;
+}
+
+#wishInput{
+width:80%;
+max-width:350px;
+height:120px;
+border-radius:15px;
+padding:15px;
+font-size:18px;
+resize:none;
+outline:none;
+border:2px solid #ff7ac3;
+background:rgba(255,255,255,.95);
+}
+
+#wishBtn{
+  #wishBtn{
+margin-top:20px;
+}
+
+#wishBtn:disabled{
+opacity:.5;
+cursor:not-allowed;
+box-shadow:none;
+}
+}
+
+/* Moon Page */
+
+#moonPage{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:black;
+overflow:hidden;
+z-index:999999;
+}
+
+#moon{
+width:230px;
+height:230px;
+border-radius:50%;
+background:radial-gradient(circle at 35% 35%,
+#ffffff,
+#e0e0e0 45%,
+#9e9e9e 75%,
+#666);
+box-shadow:
+0 0 120px rgba(255,255,255,.9);
+animation:moonFloat 5s ease-in-out infinite;
+}
+
+@keyframes moonFloat{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+
+#moonStar{
+position:absolute;
+top:20%;
+left:-20%;
+width:220px;
+height:4px;
+background:white;
+box-shadow:0 0 20px white;
+transform:rotate(20deg);
+animation:shootMoon 3s linear infinite;
+}
+
+@keyframes shootMoon{
+
+0%{
+transform:translateX(0) translateY(0) rotate(20deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translateX(1700px) translateY(500px) rotate(20deg);
+opacity:0;
+}
+
+}
+
+#moonText{
+margin-top:60px;
+color:white;
+text-align:center;
+font-size:28px;
+opacity:0;
+animation:textAppear 4s forwards;
+animation-delay:2s;
+}
+#noPage,
+#funnyPage,
+#punishmentPage{
+display:none;
+text-align:center;
+animation:fade 1s;
+padding:20px;
+}
+
+#slapGif{
+width:280px;
+max-width:90%;
+border-radius:20px;
+margin:20px 0;
+}
+
+#kissInput{
+width:80%;
+max-width:350px;
+height:140px;
+padding:15px;
+font-size:22px;
+border-radius:15px;
+resize:none;
+}
+
+#kissDone:disabled{
+opacity:.5;
+cursor:not-allowed;
+}
+#slapGif{
+    width:220px;
+    height:auto;
+    display:block;
+    margin:20px auto;
+    object-fit: contain;
+}
+.container,
+#letterPage,
+#noPage,
+#funnyPage,
+#punishmentPage,
+#gallery,
+#finalPage,
+#giftPage,
+#restartPage{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:90%;
+max-width:700px;
+
+}

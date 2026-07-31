@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Babyy ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Welcome Page -->
+<div class="container">
+
+<h1>🎂 Happy Birthday My Babyy ❤️</h1>
+
+<p>Made with endless love by your Pihu 💖</p>
+
+<button id="startBtn">
+💌 Open My Heart
+</button>
+
+</div>
+
+<!-- Letter Page -->
+
+<div id="letterPage" class="hidden">
+
+    <h2>💌 To My Babyy</h2>
+
+    <div id="letter"></div>
+
+    <div id="loveQuestion" class="hidden">
+
+        <h2>Do You Love Me Too? 🥹🫶🏼</h2>
+
+        <div class="loveBtns">
+            <button id="yesBtn">✋🏼 YES</button>
+            <button id="noBtn">🙃 NO</button>
+        </div>
+
+    </div>
+
+</div>
+<!-- NO Animation Page -->
+
+<div id="noPage" class="hidden">
+
+    <img src="images/slap.gif" id="slapGif">
+
+    <h2>Go Back And Click On YES 🤨😡</h2>
+
+    <button id="goBackBtn">🔙 Go Back</button>
+
+</div>
+
+<!-- Funny Page -->
+
+<div id="funnyPage" class="hidden">
+
+    <h1>😒 Bade aaye No bolne wale 😆🤭</h1>
+
+    <button id="punishmentBtn">
+        Ab Jao Wapas 😂
+    </button>
+
+</div>
+
+<!-- Punishment Page -->
+
+<div id="punishmentPage" class="hidden">
+
+    <h1>😈 Punishment Section</h1>
+
+    <p>
+        Victim ko punishment ke liye
+        yaha <b>50 😘</b>type karna hoga.
+        <br><br>
+        Task complete hone ke baad hi
+        next page khulega.
+    </p>
+
+    <textarea
+        id="kissInput"
+        placeholder="😘😘😘😘😘..."
+    ></textarea>
+
+    <p id="kissCount">
+        0 / 50 😘
+    </p>
+
+    <button id="kissDone" disabled>
+        ✅ Done
+    </button>
+
+</div>
+
+<!-- Photo Gallery -->
+<div id="gallery" class="hidden">
+
+<h2>📸 Our Beautiful Memories ❤️</h2>
+
+<img id="slide" src="images/1.png" alt="Our Memory">
+
+<p id="caption"></p>
+
+</div>
+
+<!-- Final Love Page -->
+<div id="finalPage" class="hidden">
+
+<h1>❤️ I LOVE YOU ❤️</h1>
+
+<h2> Babyy 🎂</h2>
+
+<p>
+Forever & Always... ❤️<br><br>
+
+Thank you for being my best friend,<br>
+my love,<br>
+my happiness,<br>
+and my forever person. 🥹💖<br><br>
+
+No matter what happens in life...<br>
+I will always choose you. ❤️<br><br>
+
+— *,<br>
+<b>💖</b>
+</p>
+
+<button id="letterNextBtn">
+➡️ Next ❤️
+</button>
+</div>
+<!-- Gift Page -->
+<div id="giftPage" class="hidden">
+
+  <h1>🎁 Secret Gift</h1>
+
+  <button id="giftBtn">🎁 Open Gift</button>
+
+  <div id="promiseBox" class="hidden">
+
+    <h2>🌸 Sona...</h2>
+
+    <p>
+      Ek Promise Karoge? 🥹❤️
+      <br><br>
+
+      💍 Chahe kitni bhi fights ho...<br>
+      Chahe kitni bhi misunderstandings aaye...<br><br>
+
+      u never leave me nor let me go. ❤️
+    </p>
+
+    <button id="promiseBtn">
+      💖 I PROMISE 💖
+    </button>
+
+  </div>
+
+</div>
+
+<!-- Background music -->
+<audio id="music" loop>
+<source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Floating Hearts -->
+<div id="hearts"></div>
+<div id="flash"></div>
+<div id="endingScreen">
+
+<h1 id="endingText">❤️ I LOVE YOU ❤️</h1>
+
+</div>
+<!-- GALAXY CINEMATIC ENDING -->
+<!-- ========================= -->
+
+<div id="galaxyPage" class="hidden">
+
+    <div id="starContainer"></div>
+
+    <div class="nebula nebula1"></div>
+    <div class="nebula nebula2"></div>
+
+    <div class="milkyWay"></div>
+
+    <div class="planet sun"></div>
+
+    <div class="planet mercury"></div>
+    <div class="planet venus"></div>
+    <div class="planet earth"></div>
+    <div class="planet moon"></div>
+    <div class="planet mars"></div>
+    <div class="planet jupiter"></div>
+    <div class="planet saturn"></div>
+    <div class="planet uranus"></div>
+    <div class="planet neptune"></div>
+
+    <div class="shooting shooting1"></div>
+    <div class="shooting shooting2"></div>
+    <div class="shooting shooting3"></div>
+    <div class="shooting shooting4"></div>
+    <div class="shooting shooting5"></div>
+    <div class="shooting shooting6"></div>
+
+    <h1 id="galaxyText">
+        My Love For You Is More Than The Whole Galaxy ❤️✨
+    </h1>
+
+</div>
+<!-- Wish Page -->
+<div id="wishPage" class="hidden">
+  
+    <h1>🌠 Make A Wish 💖</h1>
+
+    <p> Close your eyes... make a wish and write it here ✨</p>
+
+    <textarea id="wishInput" placeholder="Write your wish here..."></textarea>
+
+<button id="wishBtn" disabled>✨ Done</button>
+
+</div>
+
+<!-- Moon Page -->
+<div id="moonPage" class="hidden">
+
+    <div id="moon"></div>
+
+    <div id="moonStar"></div>
+
+    <h2 id="moonText">
+        The universe is listening to you babyy 💫<br><br>
+        Your wish will surely be fulfilled soon ☄️
+    </h2>
+
+</div>
+<!-- Restart Page -->
+<div id="restartPage" class="hidden">
+
+<h1>💖 The End 💖</h1>
+
+<p>
+Thank you for watching my little surprise ❤️
+</p>
+
+<button id="restartBtn">
+🔄 Watch Again ❤️
+</button>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
